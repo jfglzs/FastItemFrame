@@ -4,6 +4,7 @@
   "package": "io.jfglzs.fastitemframe.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ClientPacketListener_Mixin",
     "ItemFrame_Mixin"
   ],
   "client": [
