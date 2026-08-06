@@ -9,6 +9,6 @@ public class FastitemframeClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        LOGGER.info("Loading Fastitemframe");
+        LOGGER.info("Loading FIF Issues Report: https://github.com/jfglzs/FastItemFrame/issues");
     }
 }

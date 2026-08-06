@@ -3,12 +3,12 @@
   "id": "fastitemframe",
   "version": "${version}",
   "name": "FastItemFrame",
-  "description": "",
-  "authors": ["AntiDeath"],
+  "description": "A crazy fabric Mod that opt ItemFrame and ItemFrame Draws",
+  "authors": ["AntiDeath(jfglzs)"],
   "contact": {},
   "license": "All-Rights-Reserved",
   "icon": "assets/fastitemframe/icon.png",
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "client": [
       "io.jfglzs.fastitemframe.FastitemframeClient"
@@ -19,6 +19,6 @@
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
-    "minecraft": ">=1.21.11 <=26.3"
+    "minecraft": ">=26.1.2 <=26.3"
   }
 }
