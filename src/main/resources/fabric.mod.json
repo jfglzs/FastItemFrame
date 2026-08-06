@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "fastitemframe",
+  "version": "${version}",
+  "name": "FastItemFrame",
+  "description": "",
+  "authors": ["AntiDeath"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/fastitemframe/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.jfglzs.fastitemframe.FastitemframeClient"
+    ]
+  },
+  "mixins": [
+    "fastitemframe.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": ">=1.21.11 <=26.3"
+  }
+}

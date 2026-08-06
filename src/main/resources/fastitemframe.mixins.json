@@ -1,0 +1,19 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "io.jfglzs.fastitemframe.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ItemFrame_Mixin"
+  ],
+  "client": [
+    "ClientLevel_Mixin",
+    "ItemFrameRenderer_Mixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
