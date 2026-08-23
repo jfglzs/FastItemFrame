@@ -9,7 +9,8 @@
   ],
   "client": [
     "ClientLevel_Mixin",
-    "ItemFrameRenderer_Mixin"
+    "ItemFrameRenderer_Mixin",
+    "Minecraft_Mixin"
   ],
   "injectors": {
     "defaultRequire": 1

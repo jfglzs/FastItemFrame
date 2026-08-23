@@ -1,6 +1,7 @@
 package io.jfglzs.fastitemframe.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import io.jfglzs.fastitemframe.acc.ClientPacketListenerAccessor1;
 import it.unimi.dsi.fastutil.ints.Int2IntArrayMap;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.network.protocol.game.ClientboundMapItemDataPacket;
@@ -14,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ClientPacketListener.class)
-public class ClientPacketListener_Mixin {
+public class ClientPacketListener_Mixin implements ClientPacketListenerAccessor1 {
     @Unique
     private final Int2IntArrayMap FIF$MAPS = new Int2IntArrayMap();
 
@@ -48,6 +49,11 @@ public class ClientPacketListener_Mixin {
         else {
             this.FIF$MAPS.put(intID, saveDataHash);
         }
+    }
+
+    @Unique
+    public Int2IntArrayMap FIF$getMaps() {
+        return FIF$MAPS;
     }
 }
 
