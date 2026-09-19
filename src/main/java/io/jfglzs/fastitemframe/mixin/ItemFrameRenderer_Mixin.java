@@ -4,6 +4,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import net.minecraft.client.renderer.block.BlockModelRenderState;
 import net.minecraft.client.renderer.block.BlockModelResolver;
 import net.minecraft.client.renderer.entity.ItemFrameRenderer;
@@ -52,27 +53,27 @@ public class ItemFrameRenderer_Mixin {
             method = "submit(Lnet/minecraft/client/renderer/entity/state/ItemFrameRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V",
             at = @At(
                     value = "INVOKE",
-                    target = "Lcom/mojang/blaze3d/vertex/PoseStack;mulPose(Lorg/joml/Quaternionfc;)V",
+                    target = "Lcom/mojang/blaze3d/vertex/PoseStack;rotateDegrees(Lcom/mojang/math/Axis;F)V",
                     ordinal = 2
             )
     )
-    public void submit(PoseStack instance, Quaternionfc by, Operation<Void> original,
+    public void submit(PoseStack instance, Axis axis, float angle, Operation<Void> original,
                        @Local ItemFrameRenderState state) {
         if (state.rotation != 0)
-            original.call(instance, by);
+            original.call(instance, axis, angle);
     }
 
     @WrapOperation(
             method = "submit(Lnet/minecraft/client/renderer/entity/state/ItemFrameRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/level/CameraRenderState;)V",
             at = @At(
                     value = "INVOKE",
-                    target = "Lcom/mojang/blaze3d/vertex/PoseStack;mulPose(Lorg/joml/Quaternionfc;)V",
+                    target = "Lcom/mojang/blaze3d/vertex/PoseStack;rotateDegrees(Lcom/mojang/math/Axis;F)V",
                     ordinal = 4
             )
     )
-    public void submit_1(PoseStack instance, Quaternionfc by, Operation<Void> original,
+    public void submit_1(PoseStack instance, Axis axis, float angle, Operation<Void> original,
                          @Local ItemFrameRenderState state) {
         if (state.rotation != 0)
-            original.call(instance, by);
+            original.call(instance, axis, angle);
     }
 }
