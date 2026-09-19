@@ -9,6 +9,7 @@
   ],
   "client": [
     "ClientLevel_Mixin",
+    "EntityRenderer_Mixin",
     "ItemFrameRenderer_Mixin",
     "Minecraft_Mixin"
   ],

@@ -30,14 +30,18 @@ public class Minecraft_Mixin {
     private void runTick(CallbackInfo ci) {
         FIF$age++;
         if (this.player != null && this.FIF$age % 200 == 0) {
+            refresh(this.player.getMainHandItem());
             for (ItemStack stack : this.player.getInventory()) {
-                if (! stack.is(Items.FILLED_MAP)) return;
-                MapId mapId = stack.get(DataComponents.MAP_ID);
-                if (mapId != null) {
-                    ((ClientPacketListenerAccessor1) player.connection).FIF$getMaps().remove(mapId.id());
-                }
+                refresh(stack);
             }
         }
+    }
 
+    @Unique
+    public void refresh(ItemStack stack) {
+        if (! stack.is(Items.FILLED_MAP)) return;
+        MapId mapId = stack.get(DataComponents.MAP_ID);
+        if (mapId != null)
+            ((ClientPacketListenerAccessor1) this.player.connection).FIF$getMaps().remove(mapId.id());
     }
 }
