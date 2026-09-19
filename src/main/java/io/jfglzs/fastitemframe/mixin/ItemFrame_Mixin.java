@@ -16,4 +16,14 @@ public abstract class ItemFrame_Mixin extends Entity {
     public boolean isDiscrete() {
         return false;
     }
+
+    @Override
+    public boolean fireImmune() {
+        return true;
+    }
+
+    @Override
+    public boolean isOnFire() {
+        return false;
+    }
 }

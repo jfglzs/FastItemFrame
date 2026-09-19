@@ -17,8 +17,7 @@ import java.util.Map;
 
 @Mixin(ClientLevel.class)
 public class ClientLevel_Mixin {
-    @Unique
-    private final Int2ObjectMap<MapItemSavedData> FIF$MAPS = new Int2ObjectOpenHashMap<>();
+    @Unique private final Int2ObjectMap<MapItemSavedData> FIF$MAPS = new Int2ObjectOpenHashMap<>();
 
     @Inject(
             method = "getMapData",

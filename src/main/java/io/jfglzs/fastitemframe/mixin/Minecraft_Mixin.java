@@ -20,8 +20,7 @@ public class Minecraft_Mixin {
     @Shadow
     @Nullable
     public LocalPlayer player;
-    @Unique
-    private int FIF$age = 0;
+    @Unique private int FIF$age = 0;
 
     @Inject(
             method = "runTick",
@@ -39,7 +38,8 @@ public class Minecraft_Mixin {
 
     @Unique
     public void refresh(ItemStack stack) {
-        if (! stack.is(Items.FILLED_MAP)) return;
+        if (! stack.is(Items.FILLED_MAP))
+            return;
         MapId mapId = stack.get(DataComponents.MAP_ID);
         if (mapId != null)
             ((ClientPacketListenerAccessor1) this.player.connection).FIF$getMaps().remove(mapId.id());
